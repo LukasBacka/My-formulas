@@ -1,0 +1,14 @@
+\subsection{15. Harmonic numbers and Riemann zeta function}
+
+\begin{align}
+      \sum_{k=1}^\infty \frac{H_k}{k^n} = \left\{ \begin{array}{ll}
+      \zeta(n+1)\left(\frac{n}{2} +1 - 2 [n=2]\right) - \delta_{2, n}
+      \sum_{i=1}^{n/2-1} \zeta(2i+1) \zeta(n-2i) & \mbox{if $\frac{n}{2} 
+      \in \mathbb{Z}^+ $};\\
+      \frac{n+2}{4}\zeta(n+1)- \delta_{3, n} \zeta(n-2i)\zeta(2i+1)
+      & \mbox{if $\frac{n+1}{4}\in \mathbb{Z}^+$}; \\
+      -\frac{1}{2}\zeta\left(\frac{n+1}{2}\right)^2 - \delta_{5, n}
+      \sum_{i=1}^{\frac{n-1}{4}-1}\zeta(n-2i)\zeta(2i+1) + 
+      \frac{n+2}{4}\zeta(n+1); & \mbox{if $\frac{n-1}{4}\in 
+      \mathbb{Z}^+$}; \\\end{array} \right.
+\end{align}
