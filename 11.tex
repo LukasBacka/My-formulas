@@ -1,0 +1,10 @@
+\subsection{11. formule (Eplicit formule for the prime function)}
+
+\begin{align}
+        \pi(x) &= \sum_{k=2}^x \frac{\left(e^{\frac{2\pi i
+        (k-1)!}{k}}-1\right)}{\left(e^{-\frac{2\pi i}{n}}-1\right)} \\
+        & = \sum_{n=2}^x \left(\prod_{\substack{m\in [2, \sqrt{n}]
+        \\ m \in \mathbb{Z}^+}} \left[ 1- \prod_{j=1}^{m-1}\frac{
+        \sin^2\left(\frac{n+j}{m}\pi\right)}{\sin^2\left(\frac{j}{m}
+        \pi\right)}\right]\right)
+\end{align}
