@@ -1,0 +1,108 @@
+\subsection{9. Formule (Explicit representation of the nested power tower function)}
+
+\begin{align}
+        \mathcal{T}\left(\bigotimes_{n=1}^ka_n | x\right) =
+        \sum_{n=0}^\infty \frac{1}{n!}\left(\biigO_{l=1}^{k-1}
+        \ln(a_l)\left[\sum_{n_l\geq0}\frac{1}{n_l!}\left(
+        \lambda_l\right)^{n_l}\right]^{\Lambda(l, k, \ln(a_k)x}\right)^n
+\end{align}
+
+where \(\Lambda(l, k, \ln(a_k)x) :=\left[\lceil tanh^2(l-k+1)
+\rceil+\delta_{l, k-1}(\ln(a_k)x)\right]\), this function is 
+equal to \(\ln(a_k)x\) iff \(l=k-1\), in other cases, its 0.
+Then higher derivation of this function is
+
+\begin{align}
+        \frac{d^\xi\mathcal{T}}{dx^\xi}\left(\bigotimes_{n=1}^ka_n
+        | x\right) = \sum_{n\geq0}\frac{1}{n!}\ln^n(a_1)
+        \frac{d^\xi}{dx^\xi}\left(\sum_{n_1\geq0}\frac{1}{n_1!}g(x)\right)
+\end{align}
+
+We use the Multinomial formula for
+
+\begin{align}
+        \frac{d^\xi}{dx^\xi}\left(\sum_{n_1\geq0}\frac{1}{
+        n_1!}g(x)\right) &=  \frac{d^\xi}{dx^\xi} \sum_{n_1
+        \geq0} \left(\sum_{\substack{0\leq r_1 \leq...\leqr_n
+        \leq n_1 \\ r_1 +...+r_n = n_1}}\prod_{i=1}^n \frac{1}{
+        r_i}\right)g^{n_1}(x) \\
+        &=\sum_{n_1\geq0} \left(\sum_{\substack{0\leq r_1 \leq.
+        ..\leqr_n\leq n_1 \\ r_1 +...+r_n = n_1}}\prod_{i=1}^n 
+        \frac{1}{r_i}\right)\frac{d^\xi}{dx^\xi}g^{n_1}(x)
+\end{align}
+
+There is set \(S=\{r_1, ..., r_n\}\) of many distinct elements 
+with \(m \leq n\), call these distinct elements \(s_1, ..., s_m\).
+And define \(N(s_i) = \# \mbox{of} \ s_i \ \mbox{appears in} \ 
+(r_1, ..., r_n) \), then we see that the number of time \(a_{r_1}
+...a_{r_n}\) is is counted is equal to 
+
+\begin{align}
+        \frac{n!}{N(s_1)!...N(s_m)!}
+\end{align}
+
+thus we have
+
+\begin{align}
+        \sum_{n_1\geq0} \left(\sum_{\substack{0\leq
+        r_1 \leq...\leqr_n\leq n_1 \\ r_1 +...+r_n =
+        n_1}}\frac{n!}{N(s_1)!...N(s_m)!}\prod_{i=1}^n
+        \frac{1}{r_i}\right)\frac{d^\xi}{dx^\xi}g^{n_1}(x)
+\end{align}
+
+hence
+
+\begin{align}
+        \frac{d^\xi}{dx^\xi}\left(\sum_{n_1\geq0}\frac{1}{
+        n_1!}g(x)\right) &=\sum_{n\geq0}\frac{1}{n!}\ln^n(
+        a_1) \frac{d^\xi}{dx^\xi}\left(\sum_{n_1\geq0}\frac{1}{
+        n_1!}g(x)\right) \\
+        &=\sum_{n\geq 0}\frac{1}{n!}\ln^n(a_1)\sum_{n_1\geq0}
+        \left(\sum_{\substack{0\leq r_1 \leq...\leqr_n\leq n_1 
+        \\ r_1 +...+r_n = n_1}}\prod_{i=1}^n \frac{1}{r_i}\right)
+        \frac{d^\xi}{dx^\xi}g^{n_1}(x) \\
+        & =\sum_{n_0\geq 0}\frac{1}{n_0!}\biigO_{l=1}^{k-1}
+        \ln^{n_{l-1}}(a_l)
+        \sum_{n_l\geq0} \left(\sum_{\substack{0\leq r_1 \leq...
+        \leqr_n\leq n_l \\ r_1 +...+r_n = n_l}}\frac{n_{l-1}!}{
+        N(s_1)!...N(s_m)!}\prod_{i=1}^{n_{l-1}} \frac{1}{r_i}
+        \right)(\lambda_l)^{n_l \Lambda(l, k,\frac{\ln(a_k)x^{
+        -\xi+n_{l-1}}}{((1-\xi + n_{l-1})_\xi)^{-1}}}
+\end{align}
+
+then we use equation \ref{w}, so we get
+
+\begin{align}
+        \mathcal{T}(\bigotimes_{k \geq t \geq 1}a_t| x) 
+        \ln^\xi (a_k) \biigO_{\lambda = 1}^{m-1} R\left[
+        \sum_{u_{\lambda}=1}^{u_{\lambda-1}}\ln^{u_{
+        \lambda}}(a_{k-\lambda}) \mathcal{T}(\bigotimes_{
+        q = \lambda-1}^\lambda a_{k-q} |x)^{u_{\lambda}} 
+        \right] = \\=\sum_{n_0\geq 0}\frac{1}{n_0!}\biigO_{l=1}^{k-1}
+        \ln^{n_{l-1}}(a_l)
+        \sum_{n_l\geq0} \left(\sum_{\substack{0\leq r_1 
+        \leq...\leqr_n\leq n_l \\ r_1 +...+r_n = n_l}}
+        \frac{n_{l-1}!}{N(s_1)!...N(s_m)!}\prod_{i=1}^{n_{l-1}}
+        \frac{1}{r_i}\right)(\lambda_l)^{n_l \Lambda(l, k,\frac{
+        \ln(a_k)x^{-\xi+n_{l-1}}}{((1-\xi + n_{l-1})_\xi)^{-1}}}
+\end{align}
+
+we solve this equation for \( \mathcal{T}(\bigotimes_{k 
+\geq t \geq 1}a_t| x)\)
+
+\begin{align}
+        \mathcal{T}(\bigotimes_{k \geq t \geq 1}a_t| x)
+        &=\left(\ln^\xi (a_k) \biigO_{\lambda = 1}^{m-1} 
+        \left[ \lceil \tanh^2(\lambda -1)\rceil+\delta_{\lambda,
+        1}(S_2((u_1, \xi))\right]\left[\sum_{u_{\lambda}=1}^{
+        u_{\lambda-1}}\ln^{u_{\lambda}}(a_{k-\lambda}) \mathcal{
+        T}(\bigotimes_{q = \lambda-1}^\lambda a_{k-q} |x)^{u_{
+        \lambda}} \right]\right)^{-1}\times \\ &\times \sum_{
+        n_0\geq 0}\frac{1}{n_0!}\biigO_{l=1}^{k-1}
+        \ln^{n_{l-1}}(a_l)
+        \sum_{n_l\geq0} \left(\sum_{\substack{0\leq r_1 \leq..
+        .\leq r_n\leq n_l \\ r_1 +...+r_n = n_l}}\frac{n_{l-1}!
+        }{N(s_1)!...N(s_m)!}\prod_{i=1}^{n_{l-1}} \frac{1}{r_i}
+        \right)(\lambda_l)^{n_l \Lambda(l, k,\frac{\ln(a_k)x^{
+        -\xi+n_{l-1}}}{((1-\xi + n_{l-1})_\xi)^{-1}}}
+\end{align}
