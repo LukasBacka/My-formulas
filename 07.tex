@@ -1,0 +1,35 @@
+\subsection{7. formula (Series expansion of Thick function}
+
+\begin{theorem}
+      Let n be a positive integer. If x and y are
+      \(C^n\)-functions of t and \(\frac{dx}{dt}
+      \neq 0\) in a certain interval, then
+      
+      \begin{align}
+            \frac{d^n y}{dx^n} = \frac{(-1)^{n-1}}{(
+            \frac{dx}{dt})^{2n-1}}\sum_{k=1}^n \frac{
+            \frac{d^ky}{dt^k}}{(k-1)!}\sum_{\substack{
+            s_1 + s_2 . ... = n-1 \\ 1\times s_1 + 2 
+            \times s_2 + ... = 2n-k-1}}(-1)^{s_1}(2n-
+            s_1-2)! \prod_{r=1}\frac{(\frac{dx}{dt})^{
+            s_r}}{(r!)^{s_r}s_r!}
+      \end{align}
+      
+      is valid in the interval. 
+      
+\end{theorem}
+
+\begin{align}
+     \hat{\mathbb{T}}^{(\xi)}\left( \xi_k \begin{matrix} 
+     P_m \\ \Omega_m \end{matrix} \bigg| x  \right) &= 
+     (-1)^{n-1}\left(\left(\frac{d\hat{\mathbb{T}}^{(\xi)}
+     \left( \xi_k \begin{matrix} P_m \\ \Omega_m \end{matrix}
+     \bigg| t  \right)}{dt}\right)^{2n-1}\right)^{-1}\sum_{k=1}^n 
+     \frac{\frac{d^k\hat{\mathbb{T}}\left( \xi_k \begin{matrix}
+     P_m \\ \Omega_m \end{matrix} \bigg| t  \right)}{dt^k}}{(k-1)!} \\
+     &\sum_{\substack{s_1 + s_2 . ... = n-1 \\ 1\times s_1 + 2 
+     \times s_2 + ... = 2n-k-1}}(-1)^{s_1}(2n-s_1-2)! 
+     \prod_{r=1}\frac{(\frac{d\hat{\mathbb{T}}^{(\xi)}
+     \left( \xi_k \begin{matrix} P_m \\ \Omega_m \end{matrix}
+     \bigg| t  \right)}{dt})^{s_r}}{(r!)^{s_r}s_r!}
+\end{align}
