@@ -1,0 +1,64 @@
+\subsection{6. formula (nth derivation of the \(\mathcal{T}\)-function}
+
+\begin{definition}
+        \(\mathcal{T}\) function is recursive \(\mathcal{T}(n_1,
+        n_2, ..., n_k | x) = n_1^{\mathcal{T}(n_2, ..., n_k | x)}\)
+        with endpoints \(\mathcal{T}(n_k | x ) = n_k^x\) , 
+        where the coefficients  \((n_1, n_2, ..., n_k)\) make up
+        the \(\xi\) vector,
+        when it applies \(n_1, n_2, ..., n_k \in  \mathbb{C}\). 
+        \(\mathcal{T}(n_1, n_2, ..., n_k | x) \) is the 
+        \(\mathcal{T}\) k-th order function with base \(x\).
+\end{definition}
+
+\begin{align}
+        \frac{d^\xi}{dx^\xi}(\mathcal{T}(a,| x) ) &=a^x
+        \ln^\xi(a)\\
+        \frac{d^\xi}{dx^\xi}(\mathcal{T}(a, b | x) ) &=
+        T(a, b |x) \ln^\xi(b) \sum_{w=1}^\xi \ln^w(a)
+        b^{wx} S_2(w, \xi) \\
+        \frac{d^\xi}{dx^\xi}(\mathcal{T}(a, b, c | x) 
+        ) &= \mathcal{T}(a, b, c | x) \ln^\xi(c) \left[
+        \sum_{i=1}^\xi S_2(i, \xi) \ln^i(b)c^{ix} 
+        \sum_{j=1}^i \ln^j(a) b^{jc^x}\right]
+\end{align}
+
+where \(S_2(w, \xi)\) are second order Stirling 
+numbers. Then through empirical observation, we 
+establish the following hypothesis
+
+\begin{theorem}
+        \begin{align}
+                \frac{d^\xi}{dx^\xi}(\mathcal{T}(\bigotimes_{m 
+                \geq t \geq n}x_t | x) ) &= \mathcal{T}(
+                \bigotimes_{m \geq t \geq n}x_t| x) \ln^\xi 
+                (x_m) \left[\sum_{u_1 = 1}^\xi S_2(u_1, \xi) 
+                \ln^{u_1}(x_{m-1}) \mathcal{T}(x_{m}| u_1  x)
+                \times \right. \\ & \left. \times \sum_{u_2 = 
+                1}^{u_1} \ln^{u_2}(x_{m-2}) \mathcal{T}(x_{m-1}
+                u_2, x_m |x) \sum_{u_3}^{u_2}...\right. \\ & ...
+                \left. \sum_{u_{m-1}=1}^{u_{m-2}}\ln^{u_{m-1}}(x_1)
+                \mathcal{T}(\bigotimes_{q=2}^m (x_q + \delta_{m, q}
+                (-x_q + x_q u_{m-1})) |x)\right]
+        \end{align}
+
+        by means of noncommutative multiplication, which we 
+        denote by \(o\), we can reformulate the above relation 
+        with \(u_0 = \xi\)
+        
+        \begin{align}
+                \frac{d^\xi}{dx^\xi}(\mathcal{T}(\bigotimes_{m
+                \geq t \geq n}x_t | x) ) &= \mathcal{T}(
+                \bigotimes_{m \geq t \geq n}x_t| x) \ln^\xi
+                (x_m) \biigO_{\lambda = 1}^{m-1} R\left[
+                \sum_{u_{\lambda}=1}^{u_{\lambda-1}}\ln^{u_{
+                \lambda}}(x_{m-\lambda}) \mathcal{T}(\bigotimes_{
+                q = \lambda-1}^\lambda x_{m-q} |x)^{u_{\lambda}}
+                \right]
+        \label{w}
+        \end{align}
+        \begin{align}
+                R=\left[ \lceil \tanh^2(\lambda 
+                -1)\rceil+S_{\lambda, 1}(S_2((u_1, \xi))\right]
+        \end{align}
+\end{theorem}
