@@ -1,0 +1,167 @@
+\subsection{8. formule (Higher integration of the Lambert W function}
+
+\begin{definition}
+        \begin{align}
+                J^k_x(W(x)) = \frac{x^k}{W^k(x)} 
+                \mathcal{J}_{-k}(W(x))
+        \end{align}
+        
+        kde \(\mathcal{J}_{-n}(x) =
+        \sum_{k=0}^{n+1}\xi^k j(n+1 - k, -n ) \).
+\end{definition}
+
+\begin{theorem}
+        Pro \(|x|<\frac{1}{e}\) můžeme polynom 
+        \(\mathcal{J}_n(x), n <0\) určit vztahem 
+        
+        \begin{align}
+                \mathcal{J}_k(x)=\frac{1}{e^{xk}}\sum_{n=0}^\infty 
+                \frac{(-n)^{n-1}x^{n+|k|}e^{x(n+|k|)}}{\Gamma(|k|+n+1)}
+        \end{align}
+\end{theorem}
+
+\begin{proof}
+        Jestliže expandujeme \(W_0\) mocninnou expanzí kolem počátku získáme
+        
+        \begin{align}
+                W_0(z) = \sum_{n=1}^\infty \frac{(-n)^{n-1}}{n!}z^n
+        \label{101}
+        \end{align}
+        
+        Tento vztah má poloměr konvergence \(e^{-1}\), dle D\(^{´}\)
+        Alembertova kritéria. Následně určíme n-tou integraci této expanze
+        \[J_x^n(W_0) = \sum_{k=0}^\infty \frac{(-k)^{k-1}}{k!} J_x^n(x^k)\]
+        kde \(J_x^n(x^k) = \frac{\Gamma(k+1)x^{k+n}}{\Gamma(k+n+1)}\), po 
+        dosazení získáme výraz
+        \[J_x^n(W_0) = \sum_{k=0}^\infty \frac{(-k)^{k-1}}{k!}  
+        \frac{\Gamma(k+1)x^{k+n}}{\Gamma(k+n+1)} = \sum_{k=0}^\infty
+        \frac{(-k)^{k-1}x^{k+n}}{\Gamma(k+n+1)}\]
+
+        V dalším kroku osamostatníme J-polynom v rovnici (\ref{100}) do vztahu
+        \[\mathcal{J}_k(W(x)) = \frac{J_x^{|k|}(W(x) W^{|k|}(x)}{x^{|k|}}\]
+        využijeme substituci \(W(x) = y, x = ye^y\), a zároveň \(J_x^n(W_0)=
+        \sum_{k=0}^\infty \frac{(-k)^{k-1}x^{k+n}}{\Gamma(k+n+1)}\).
+        
+        \begin{align*}
+                \mathcal{J}_k(y) &= \frac{\sum_{n=0}^\infty \frac{(-n)^{n-1}y^{
+                n+|k|}e^{y(n+|k|)}}{\Gamma(|k|+n+1)} y^{|k|}}{y^{|k|} e^{yk}} \\
+                &= \frac{1}{e^{yk}}\sum_{n=0}^\infty \frac{(-n)^{n-1}y^{n+|k|}
+                e^{y(n+|k|)}}{\Gamma(|k|+n+1)}
+        \end{align*}
+\end{proof}
+
+\begin{theorem}
+        Pro každé x v \(\mathcal{C}\) a \(k < 0\) platí
+        \begin{align}
+                \mathcal{J}_k(x) = \frac{1}{e^{x|k|}}\sum_{m=1}^\infty a_m 
+                J_x^{|k|}\left[ \left( \frac{\sqrt{e^{x+1}x+1}-1}{\sqrt{
+                e^{x+1}x + 1} +1}\right)^m e^x (x+1)\right]
+        \end{align}
+        
+        kde
+        
+        \begin{align}
+                a_m = \sum_{n=1}^{m}\frac{(-n)^{n-1}}{n!}\left( 
+                \frac{4}{e}\right)^n \binom{m+n-1}{m-n}.
+        \end{align}
+\end{theorem}
+
+\begin{proof}
+        Nechť g je konformní zobrazení na otevřeném disku 
+        \(\mathbb{D}\) na \(\mathcal{C}\) s \(g(0) = 0\) a
+        pro \(z \in \mathbb{D}\), nechť \(F(z) = W_0(g(z))\).
+        Potom F je holomorfní zobrazení \(\mathbb{D}\) na 
+        \(\Omega_0\), a \(F(0) = 0\). Pro některé koeficienty
+        \(a_0\) můžeme vytvořit vztah
+        \[W_0(g(z)) = F(z) = \sum_{m=1}^\infty a_0 z^m\]
+        Jestliže teď vybereme libovolnou \(\zeta \in \mathcal{C}\)
+        a dáme \(z = g^{-1}(\zeta)\), dostaneme
+        \[W_0(\zeta) = \sum_{m=1}^\infty a_0 [g^{-1}(\zeta)]^m,\]
+        Pro konstrukci zobrazení g, můžeme vypozorovat
+        \begin{itemize}
+                \item z \(\mapsto ez +1\) zobrazení \(\mathcal{C}\)
+                na \(\mathbb{C}\setminus (-\infty, 0 \rangle\);
+                \item \(z \mapsto \sqrt{z}\) zobrazení \(\mathbb{C} 
+                \setminus (-\infty, 0 \rangle \)na \(\{c+iy : x > 0\}\);
+                \item \(z \mapsto (z-1)/(z+1)\) zobrazení \(\{x+iy
+                : x > 0\} \) na  \(\mathbb{D}\)
+        \end{itemize}
+        
+        to splňuje, že g je konformní zobrazení \(\mathbb{D}\)
+        na \(\mathcal{C}\) s \(g(0) = 0,\) kde
+        
+        \begin{align*}
+                g(z) = \frac{4z}{e(z-1)^2}, & \ z \in \mathbb{D}
+        \end{align*}
+        
+        a také
+        
+        \begin{align*}
+                g^{-1}(\zeta) = \frac{\sqrt{e\zeta + 1}-1}{
+                \sqrt{e\zeta z+1}+1}, & \ \zeta \in \mathcal{C}
+        \end{align*}
+        
+        Pro libovolné komplexní číslo \(\alpha\) a z, kde \(|z|<1\), platí
+        \[ \frac{1}{(1-z)^\alpha} = \sum_{k=0}^\infty \binom{k+\alpha-1}{k}z^k.\]
+        když zvolíme \(\alpha = 2n\), kde \(n \in \mathbb{Z}^+\) , a vynásobíme 
+        obě strany \(z^n\), získáme
+        \[ \left[ \frac{z}{(z-1)^2}\right]^n = \sum_{k=0}^\infty \binom{k+2n-1}{k}
+        z^{k+n}.\]
+        Následně, když \(|z|\) je dostatečně malé, potom \(|g(z)|<1/e,\) takže
+        \[\sum_{n=1}^\infty \frac{(-n)^{n-1}}{n!} \left[ \frac{4z}{e(z-1)^2}
+        \right]^n = W_0(g(z)) = \sum_{m=1}^\infty a_m z^m.\]
+        Z tohoto vyplývá, že pro všechny z v sousedství 0
+        \[\sum_{m=1}^\infty a_0z^m = \sum_{n=1}^\infty \sum_{k=0}^\infty 
+        \frac{(-n)^{n-1}}{n!} \left( \frac{4}{e}\right)^n \binom{k+2n-1}{k}z^{k+n}.\]
+        tím pádem
+        
+        \begin{align*}
+                a_m &= \sum_{k+n=m}\frac{(-n)^{n-1}}{n!} \left( 
+                \frac{4}{e}\right)^n \binom{k+2n-1}{k} \\ & a_m =
+                \sum_{n=1}^{m}\frac{(-n)^{n-1}}{n!}\left( 
+                \frac{4}{e}\right)^n \binom{m+n-1}{m-n}.  
+        \end{align*}
+        
+        Následně určíme n-tou integraci této expanze
+        \[  J_z^k(W(x)) = \sum_{m=1}^\infty a_m  J_z^k 
+        \left( \frac{\sqrt{ex+1}-1}{\sqrt{ex + 1} +1}\right)^m\]
+        dosadíme do (\ref{100}), osamostatníme J polynom 
+        a využijeme substituci \(\xi = W(x)\)
+        
+        \begin{align}
+                \mathcal{J}_k(x) = \frac{1}{e^{x|k|}}\sum_{m=1}^\infty 
+                a_m J_x^{|k|}\left[ \left( \frac{\sqrt{e^{x+1}x+1}-1}{
+                \sqrt{e^{x+1}x + 1} +1}\right)^m e^x (x+1)\right]
+        \end{align}
+\end{proof}
+
+\begin{align}
+        J^{|k|}_x(W(x)) =  \frac{W^{|k|}(x)}{x^{|k|}}\sum_{m=1}^\infty
+        a_m  J_z^k \left( \frac{\sqrt{ex+1}-1}{\sqrt{ex + 1} +1}\right)^m
+\label{100}
+\end{align}
+
+kde
+
+\begin{align}
+        a_m = \sum_{n=1}^{m}\frac{(-n)^{n-1}}{n!}\left( 
+        \frac{4}{e}\right)^n \binom{m+n-1}{m-n}.
+\end{align}
+
+kde
+
+\begin{align}
+        J_z^k \left[\left( \frac{\sqrt{ex+1}-1}{\sqrt{ex + 1}
+        +1}\right)^m\right] &= \sum_{k \geq 0}\frac{(x-a)^k}{k!}
+        \sum_{n=0}^k \binom{k}{n}\left[ \sum_{\lambda =0}^m \binom{m}{
+        \lambda}(-1)^{m-\lambda}e^{k-n}\times\right. \\ &\left.\times(
+        1+ex)^{\frac{\lambda-2k-2n}{2}}\left( 1+\frac{\lambda}{2}-k+n
+        \right)_{k-n}\right] \times \\
+        & \times
+        \left[ \sum_{\xi \geq 0} \binom{-m}{\xi} e^n(1+ex)^{
+        \frac{\xi-2n}{2}}\left( 1+\frac{\xi}{2}-n\right)_n\right]
+\end{align}
+
+pro nějakou konstantu a, která určuje poloměr konvergence.
+Zároveň musí platit \(\xi \neq 2a, \lambda \neq 2a, a \neq 
+e, a>0\).
