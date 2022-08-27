@@ -1,0 +1,37 @@
+\subsection{5. formula (Bürmann-Lagrange series of B-thick function)}
+
+\begin{conjecture}
+\label{mm}
+      The following relationship is Bürmann-Lagrange series 
+      of B-thick function around neighbourhood a = 0.
+      
+      \begin{align}
+            \hat{\mathbb{T}}\left( \xi_k \begin{matrix} P_m \\
+            \Omega_m \end{matrix} \bigg| x \right) 
+            = \sum_{n \geq 1} \left( x - \hat{\mathbb{D}}\left(
+            \xi_k \begin{matrix} P_m \\ \Omega_m \end{matrix} 
+            \bigg| 0 \right)\right)^n \mathcal{I}(P_m, \Omega_m, n)
+      \end{align}
+      
+      where 
+      
+      \begin{align}
+            \mathcal{I}(P_m, \Omega_m, n) =  \lim_{\omega \to 0}
+            \sum^{n-1}_{h=0} \binom{n-1}{h} \frac{\omega^{h+1}
+            \Gamma(1+n)}{\Gamma(h+2)}  \sum_{u=0}^\infty (-1)^u 
+            \binom{n + u - 1}{u}  \hat{\mathbb{D}}\left( \xi_k 
+            \begin{matrix} P_m \\ \Omega_m \end{matrix} \bigg| 
+            0 \right)^{-n-u}  \mathcal{R}^{(h)}
+      \end{align}
+      
+      and
+      
+      \begin{align}
+            \mathcal{R}^{(h)}= \sum_{v=0}^u \binom{u}{v} 
+            \sum_{g=0}^h \binom{h}{g}  \left(\mathcal{T}(
+            \rho_k | \omega) \right)^{(u-g)} n! \sum_{
+            \sum_{j=1}^m k_j = n}\prod_{1 \leq t \leq m} 
+            \frac{(\omega - \omega_t)^{p_k v}\Gamma(1+p_t 
+            v)}{\Gamma(1+p_t v - k_t)} 
+      \end{align}
+\end{conjecture}
