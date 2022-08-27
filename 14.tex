@@ -1,0 +1,104 @@
+\subsection{14. higher derivation of the super-square root}
+
+\begin{align}
+      ssrt(x) = \frac{\ln(x)}{W(\ln(x))}
+\end{align}
+
+we can apply generalized Leibniz rule
+
+\begin{align}
+      \frac{d^\xi(ssrt(x)}{dx^\xi}=\sum_{n=0}^\xi 
+      \binom{\xi}{n}\ln^{(\xi-n)}(x)\frac{d^\xi}{
+      dx^\xi}\left(\frac{1}{W(\ln(x))}\right)
+\end{align}
+
+we substitute
+
+\begin{align}
+      \Lambda(\xi, x)= \frac{d^\xi}{dx^\xi}
+      \left(\frac{1}{W(\ln(x))}\right)
+\end{align}
+
+then by empirical observations
+
+\begin{align}
+      -\frac{1}{x\ln(x)(W(\ln(x))^n+W(\ln(x)))} \\
+      \frac{(\ln(x)+1)W(\ln(x))^2 +2(\ln(x)+2)W(\ln(x))
+      +\ln(x)+2}{x^2\ln^2(x) W(\ln(x))(W(\ln(x))+1)^3}
+\end{align}
+
+\(\xi=1\)
+
+\begin{align}
+      \begin{matrix}
+            1      
+      \end{matrix}
+\end{align}
+
+\(\xi=2\), rows are k, and columns are l. o- coefficients
+
+\begin{align}
+      \begin{matrix}
+            1 & 1 \\
+            1 & 2 \\
+            1 & 2 \\
+      \end{matrix}
+\end{align}
+
+\(\xi=3\)
+
+\begin{align}
+      \begin{matrix}
+            2 & 3 & 2 \\
+            4 & 9 & 7 \\
+            4 & 11 & 11 \\
+            1 & 3 & 3 \\
+            1 & 3 & 3 \\
+      \end{matrix}
+\end{align}
+
+\(\xi=4\)
+
+\begin{align}
+      \begin{matrix}
+            6 & 11 & 12 & 6 \\
+            18 & 44 & 54 & 29 \\
+            30 & 88 & 126 & 75 \\
+            30 & 99 & 156 & 104 \\
+            90 & 319 & 522 & 348 \\
+            3 & 11 & 18 & 12 \\
+            6 & 22 & 36 & 24 \\
+      \end{matrix}
+\end{align}
+
+Coefficients before the polynomial
+involving natural logarithm. c - coefficients
+
+\begin{align}
+      \begin{matrix}
+            1 & & && & & \\
+            1 & 2 & 1 & & & & \\
+            1 & 2 & 3 & 8 & 2 & & \\
+            1 & 2 & 3 & 4 & 1 & 12 & 2 \\
+      \end{matrix}
+\end{align}
+
+from empirical observations we
+can establish following hypothesis.
+
+\begin{align}
+      \frac{d^\xi}{dx^\xi}\left(\frac{1}{W(\ln(x))}\right) 
+      = \frac{(-1)^\xi (W(\ln(x))+1)^{1-2\xi}}{x^\xi \ln^\xi(x)
+      W(\ln(x))}\sum_{k=0}^{2\xi-2}c_{\xi, k}W^k(\ln(x))
+      \sum_{l=0}^{\xi-1}o_{\xi, l, k}\ln^l(x)
+\end{align}
+
+so 
+
+\begin{align}
+      \frac{d^\xi(ssrt(x))}{dx^\xi}=\sum_{n=0}^\xi 
+      \binom{\xi}{n}\frac{(\xi-n-1)!(-1)^{\xi-n-1}}{
+      x^{\xi-n-1}}\frac{(-1)^\xi (W(\ln(x))+1)^{1-2\xi}}{
+      x^\xi \ln^\xi(x) W(\ln(x))}\sum_{k=0}^{2\xi-2}c_{\xi
+      , k}W^k(\ln(x))\sum_{l=0}^{\xi-1}o_{\xi, l, k}\ln^l(x)
+\end{align}
