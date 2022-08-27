@@ -1,0 +1,68 @@
+\subsection{10. Formule (The explicit formula for Fibonacci sequence)}
+
+\begin{align}
+      _\lambda \rho_n^{n+1} = \sum_{i=0}^n \rho^i
+\end{align}
+
+where \(1 \leq \lambda n+1\), 
+\(\lambda \in \mathbb{Z}^+\).
+then
+
+\begin{align}
+      _\lambda\rho_n^{n+2} &= \sum_{n=1}^{n+1}_\lambda\rho_n^i 
+      = \sum_{i=1}^n  _\lambda\rho_n^i + \sum_{i=0}^n _\lambda\rho_n^i \\
+      _\lambda\rho_n^{n+3} &= \sum_{i=2}^n_\lambda\rho_n^i + 
+      \sum_{i=1}^n_\lambda\rho_n^i + 2\sum_{i=0}^n_\lambda\rho_n^i \\
+\end{align}
+
+We establish hypothesis 
+
+\begin{align}
+      _\lambda\rho_n^{n+m}= \sum_{k=0}^m F_{k+1}\sum_{i=m-k}^n 
+      _\lambda\rho_n^{i}=\sum_{k=0}^m F_{k+1}\left( \frac{_\lambda
+      \rho_n^{n+1} - _\lambda\rho_n^{m-k}}{_\lambda\rho_n - 1}\right)
+\end{align}
+
+Our goal is to found the explicit formula for Fibonacci sequence.
+
+\begin{align}
+      \begin{pmatrix}
+            _1\rho_n^n \\
+            _2\rho_n^n \\
+            \vdots\\
+            _n\rho_n^n \\
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+            \frac{1}{_1\rho_n^m}\sum_{k=0}^m 
+            F_{k+1}\left( \frac{_1\rho_n^{n+1} -
+            _1\rho_n^{m-k}}{_1\rho_n - 1}\right) \\
+            \frac{1}{_2\rho_n^m}\sum_{k=0}^m F_{k+1}
+            \left( \frac{_2\rho_n^{n+1} - _2\rho_n^{
+            m-k}}{_1\rho_n - 1}\right) \\
+            \vdots \\
+            \frac{1}{_n\rho_n^m}\sum_{k=0}^m F_{k+1}\left(
+            \frac{_n\rho_n^{n+1} - _n\rho_n^{m-k}}{_m\rho_n
+            - 1}\right) \\
+      \end{pmatrix}
+\end{align}
+
+\begin{theorem}
+      \((\forall \xi)(\forall \lambda)(\xi 
+      \geq 1)(1 \leq \lambda \leq n+1),\) then
+      
+      \begin{align}
+            F_{\xi+1}=\left(\frac{_\lambda \rho_n^{n+1}-_\lambda
+            \rho_n^{\Lambda(\xi)-\xi}}{_\lambda \rho_n-1}\right)
+                  \sum_{k=1}^{\Lambda(\xi)}\frac{\mu(k)_\lambda\rho_n^2
+            }{_\lambda\rho_n^{-\frac{\Lambda(\xi)}{k}}}
+      \end{align}
+      
+      where \(\mu(k)\) is Möbius function
+      
+      \begin{align}
+            \Lambda(\xi) \cong e \exp{\left(W\left(
+            \frac{1}{e}\ln\left(\frac{\xi!}{\sqrt{2
+            \pi}}\right)\right)\right)}+\frac{1}{2}
+      \end{align}
+\end{theorem}
